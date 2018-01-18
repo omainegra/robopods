@@ -1,0 +1,204 @@
+package: com.omainegra.robopods.sdwebimage
+include: [foundation, uikit, coregraphics, dispatch]
+framework: SDWebImage
+clang_args: ['-x', 'objective-c']
+headers:
+    - SDWebImage.h
+
+typedefs:
+    dispatch_queue_t: DispatchQueue
+    CFStringRef: String
+
+enums:
+    SDHTTPHeadersDictionary: {}
+    SDWebImageDownloaderOptions: {prefix: SDWebImageDownloader}
+    SDWebImageDownloaderExecutionOrder: {prefix: SDWebImageDownloader}
+    SDImageCacheType: {}
+    SDImageCacheOptions: {prefix: SDImageCacheQuery}
+    SDWebImageOptions: {prefix: SDWebImage}
+    SDImageFormat: {}
+    FLLogLevel: {}
+
+classes:
+    SDWebImageDownloaderOperation:
+        methods:
+            '-initWithRequest:inSession:options:':
+                trim_after_first_colon: true
+            '-addHandlersForProgress:completed:':
+                trim_after_first_colon: true
+    FLAnimatedImage:
+        methods:
+            '-initWithAnimatedGIFData:optimalFrameCacheSize:predrawingEnabled:':
+                trim_after_first_colon: true
+            '+setLogBlock:logLevel:':
+                trim_after_first_colon: true
+            '+logStringFromBlock:withLevel:':
+                trim_after_first_colon: true
+    FLAnimatedImageView:
+        methods:
+            '-sd_setImageWithURL:placeholderImage:':
+                trim_after_first_colon: true
+            '-sd_setImageWithURL:placeholderImage:options:':
+                trim_after_first_colon: true
+            '-sd_setImageWithURL:completed:':
+                trim_after_first_colon: true
+            '-sd_setImageWithURL:placeholderImage:completed:':
+                trim_after_first_colon: true
+            '-sd_setImageWithURL:placeholderImage:options:completed:':
+                trim_after_first_colon: true
+            '-sd_setImageWithURL:placeholderImage:options:progress:completed:':
+                trim_after_first_colon: true
+    FLWeakProxy: { exclude: true }
+    SDImageCache:
+        methods:
+            '-initWithNamespace:diskCacheDirectory:':
+                trim_after_first_colon:
+                name: initWithNamespace$diskCacheDirectory$
+            '-storeImage:forKey:completion:':
+                trim_after_first_colon:
+                name: storeImage$forKey$completion$
+            '-storeImage:forKey:toDisk:completion:':
+                trim_after_first_colon:
+                name: storeImage$forKey$toDisk$completion$
+            '-storeImage:imageData:forKey:toDisk:completion:':
+                trim_after_first_colon:
+                name: storeImage$imageData$forKey$toDisk$completion$
+            '-storeImageDataToDisk:forKey:':
+                trim_after_first_colon:
+                name: storeImageDataToDisk$forKey$
+            '-diskImageExistsWithKey:completion:':
+                trim_after_first_colon:
+                name: diskImageExistsWithKey$completion$
+            '-queryCacheOperationForKey:done:':
+                trim_after_first_colon:
+                name: queryCacheOperationForKey$done$
+            '-queryCacheOperationForKey:options:done:':
+                trim_after_first_colon:
+                name: queryCacheOperationForKey$options$done$
+            '-removeImageForKey:withCompletion:':
+                trim_after_first_colon:
+                name: removeImageForKey$withCompletion$
+            '-removeImageForKey:fromDisk:withCompletion:':
+                trim_after_first_colon:
+                name: removeImageForKey$fromDisk$withCompletion$
+            '-cachePathForKey:inPath:':
+                trim_after_first_colon:
+                name: cachePathForKey$inPath$
+    SDImageCacheConfig: {}
+    SDWebImageCoderHelper: {}
+    SDWebImageCodersManager: {}
+    SDWebImageDownloadToken: {}
+    SDWebImageDownloader:
+        properties:
+            'headersFilter': { exclude: true }
+            'setHeadersFilter:': { exclude: true }
+        methods:
+            '-setValue:forHTTPHeaderField:':
+                trim_after_first_colon: true
+            '-downloadImageWithURL:options:progress:completed:':
+                trim_after_first_colon: true
+    SDWebImageFrame:
+        methods:
+            '+frameWithImage:duration:':
+                trim_after_first_colon: true
+    SDWebImageGIFCoder: {}
+    SDWebImageImageIOCoder: {}
+    SDWebImageManager:
+        methods:
+            '-initWithCache:downloader:':
+                trim_after_first_colon: true
+            '-loadImageWithURL:options:progress:completed:':
+                trim_after_first_colon: true
+            '-saveImageToCache:forURL:':
+                trim_after_first_colon: true
+            '-cachedImageExistsForURL:completion:':
+                trim_after_first_colon: true
+            '-diskImageExistsForURL:completion:':
+                trim_after_first_colon: true
+    SDWebImagePrefetcher:
+        methods:
+            '-prefetchURLs:progress:completed:':
+                trim_after_first_colon: true
+
+protocols:
+    SDWebImageCoder:
+        methods:
+            '-decompressedImageWithImage:data:options:':
+                trim_after_first_colon: true
+            '-encodedDataWithImage:format:':
+                trim_after_first_colon: true
+    SDWebImageDownloaderOperationInterface:
+        methods:
+            '-credential':
+                property: true
+            '-initWithRequest:inSession:options:':
+                trim_after_first_colon: true
+            '-addHandlersForProgress:completed:':
+                trim_after_first_colon: true
+    SDWebImageManagerDelegate:
+        methods:
+            '-imageManager:shouldDownloadImageForURL:':
+                trim_after_first_colon: true
+            '-imageManager:transformDownloadedImage:withURL:':
+                trim_after_first_colon: true
+    SDWebImageOperation: {}
+    SDWebImagePrefetcherDelegate:
+        methods:
+            '-imagePrefetcher:didPrefetchURL:finishedCount:totalCount:':
+                trim_after_first_colon:
+                name: imagePrefetcher$didPrefetchURL$finishedCount$totalCount$
+            '-imagePrefetcher:didFinishWithTotalCount:skippedCount:':
+                trim_after_first_colon:
+                name: imagePrefetcher$didFinishWithTotalCount$skippedCount$
+    SDWebImageProgressiveCoder:
+        methods:
+            '-incrementallyDecodedImageWithData:finished:':
+                trim_after_first_colon:
+                name: incrementallyDecodedImageWithData$finished$
+    FLAnimatedImageViewDebugDelegate: {}
+
+functions:
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (SD.*):
+        class: FIXME
+        name: 'Function__#{g[0]}'
+
+values:
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    k?(SD.*):
+        class: FIXME
+        name: 'Value__#{g[0]}'
+
+constants:
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    k?(SD.*):
+        class: FIXME
+        name: 'Constant__#{g[0]}'
+
+categories:
+    "WebCache@UIView": {}
+    "WebCache@UIImageView":
+        methods:
+            '-sd_setImageWithURL:':
+                name: setImage
+            '-sd_setImageWithURL:placeholderImage:':
+                name: setImage
+            '-sd_setImageWithURL:placeholderImage:options:':
+                name: setImage
+            '-sd_setImageWithURL:completed:':
+                name: setImage
+            '-sd_setImageWithURL:placeholderImage:completed:':
+                name: setImage
+            '-sd_setImageWithURL:placeholderImage:options:completed:':
+                name: setImage
+            '-sd_setImageWithURL:placeholderImage:options:progress:completed:':
+                name: setImage
+    "WebCache@UIButton": {}
+    "WebCacheOperation@UIView": {}
+    "MultiFormat@UIView": {}
+    "HighlightedWebCache@UIImageView": {}
+    "ImageContentType@NSData": {}
+    "ForceDecode@UIView": {}
+    "GIF@UIImage": {}
+    "MultiFormat@UIImage": {}
+    "ForceDecode@UIImage": {}
