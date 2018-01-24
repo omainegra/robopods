@@ -1,0 +1,132 @@
+package: com.omainegra.robopods.lottie
+include: [foundation, uikit, coregraphics]
+framework: Lottie
+clang_args: ['-x', 'objective-c']
+headers:
+    - Lottie.h
+
+classes:
+    LOTAnimatedControl:
+        methods:
+            '-setLayerName:forState:':
+                trim_after_first_colon: true
+    LOTAnimatedSwitch:
+        methods:
+            '-setOn:animated:':
+                trim_after_first_colon: true
+            '-setProgressRangeForOnState:toProgress:':
+                trim_after_first_colon: true
+            '-setProgressRangeForOffState:toProgress:':
+                trim_after_first_colon: true
+            '+switchNamed:inBundle:':
+                trim_after_first_colon: true
+    LOTAnimationCache:
+        methods:
+            '-addAnimation:forKey:':
+                trim_after_first_colon: true
+    LOTAnimationTransitionController:
+        methods:
+            '-initWithAnimationNamed:fromLayerNamed:toLayerNamed:applyAnimationTransform:':
+                trim_after_first_colon: true
+            '-initWithAnimationNamed:fromLayerNamed:toLayerNamed:applyAnimationTransform:inBundle:':
+                trim_after_first_colon: true
+    LOTAnimationView:
+        methods:
+            '-initWithModel:inBundle:':
+                trim_after_first_colon: true
+            '-playToProgress:withCompletion:':
+                trim_after_first_colon: true
+            '-playFromProgress:toProgress:withCompletion:':
+                trim_after_first_colon: true
+            '-playToFrame:withCompletion:':
+                trim_after_first_colon: true
+            '-playFromFrame:toFrame:withCompletion:':
+                trim_after_first_colon: true
+            '-setValueDelegate:forKeypath:':
+                trim_after_first_colon: true
+            '-convertPoint:toKeypathLayer:':
+                name: "convertPointToKeypathLayer"
+            '-convertRect:toKeypathLayer:':
+                name: "convertRectToKeypathLayer"
+            '-convertPoint:fromKeypathLayer:':
+                name: "convertRectFromKeypathLayer"
+            '-convertRect:fromKeypathLayer:':
+                name: "convertRectFromKeypathLayer"
+            '-addSubview:toKeypathLayer:':
+                trim_after_first_colon: true
+            '-maskSubview:toKeypathLayer:':
+                trim_after_first_colon: true
+            '-setValue:forKeypath:atFrame:':
+                trim_after_first_colon: true
+            '-addSubview:toLayerNamed:applyTransform:':
+                trim_after_first_colon: true
+            '-convertRect:toLayerNamed:':
+                name: "convertRectToLayerNamed"
+            '+animationNamed:inBundle:':
+                trim_after_first_colon: true
+            '+animationFromJSON:inBundle:':
+                trim_after_first_colon: true
+    LOTCacheProvider: {}
+    LOTColorBlockCallback: {}
+    LOTColorValueCallback: {}
+    LOTComposition:
+        properties:
+            'layerGroup': { exclude: true }
+            'assetGroup': { exclude: true }
+        methods:
+            '-initWithJSON:withAssetBundle:':
+                trim_after_first_colon: true
+            '+animationNamed:inBundle:':
+                trim_after_first_colon: true
+            '+animationFromJSON:inBundle:':
+                trim_after_first_colon: true
+    LOTFloatInterpolatorCallback:
+        methods:
+            '+withFromFloat:toFloat:':
+                trim_after_first_colon: true
+    LOTKeypath: {}
+    LOTNumberBlockCallback: {}
+    LOTNumberValueCallback: {}
+    LOTPathBlockCallback: {}
+    LOTPathValueCallback: {}
+    LOTPointBlockCallback: {}
+    LOTPointInterpolatorCallback:
+        methods:
+            '+withFromPoint:toPoint:':
+                trim_after_first_colon: true
+    LOTPointValueCallback: {}
+    LOTSizeBlockCallback: {}
+    LOTSizeInterpolatorCallback:
+        methods:
+            '+withFromSize:toSize:':
+                trim_after_first_colon: true
+    LOTSizeValueCallback: {}
+
+
+# protocols to be updated:
+protocols:
+    LOTColorValueDelegate:
+        methods:
+            '-colorForFrame:startKeyframe:endKeyframe:interpolatedProgress:startColor:endColor:currentColor:':
+                trim_after_first_colon: true
+    LOTImageCache:
+        methods:
+            '-setImage:forKey:':
+                trim_after_first_colon: true
+    LOTNumberValueDelegate:
+        methods:
+            '-floatValueForFrame:startKeyframe:endKeyframe:interpolatedProgress:startValue:endValue:currentValue:':
+                trim_after_first_colon: true
+    LOTPathValueDelegate:
+        methods:
+            '-pathForFrame:startKeyframe:endKeyframe:interpolatedProgress:':
+                trim_after_first_colon: true
+    LOTPointValueDelegate:
+        methods:
+            '-pointForFrame:startKeyframe:endKeyframe:interpolatedProgress:startPoint:endPoint:currentPoint:':
+                trim_after_first_colon: true
+    LOTSizeValueDelegate:
+        methods:
+            '-sizeForFrame:startKeyframe:endKeyframe:interpolatedProgress:startSize:endSize:currentSize:':
+                trim_after_first_colon: true
+    LOTValueDelegate: {}

@@ -1,0 +1,7 @@
+<config>
+    <frameworks>
+        <framework>Foundation</framework>
+        <framework>UIKit</framework>
+        <framework>CoreGraphics</framework>
+    </frameworks>
+</config>
