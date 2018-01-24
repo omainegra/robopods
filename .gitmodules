@@ -1,0 +1,8 @@
+[submodule "tools/robovm"]
+	path = tools/robovm
+	url = https://github.com/MobiVM/robovm.git
+	branch = master
+[submodule "tools/robovm-bro-gen"]
+	path = tools/robovm-bro-gen
+	url = https://github.com/MobiVM/robovm-bro-gen.git
+	branch = master
