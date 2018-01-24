@@ -1,3 +1,7 @@
 os: osx
 osx_image: xcode9.2
 language: java
+
+before_install:
+- sudo gem install ffi
+- sudo gem install ffi-clang -v 0.3.0
