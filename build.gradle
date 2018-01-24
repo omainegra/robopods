@@ -8,41 +8,25 @@ buildscript {
         mavenCentral()
         maven { url "http://oss.sonatype.org/content/repositories/snapshots/" }
     }
+
     dependencies {
         classpath "com.mobidevelop.robovm:robovm-gradle-plugin:${versions.robovm}"
-        classpath "com.github.jruby-gradle:jruby-gradle-plugin:1.5.0"
-        classpath "org.eclipse.jgit:org.eclipse.jgit:4.10.0.201712302008-r"
     }
 }
 
-import org.eclipse.jgit.api.*
-import com.github.jrubygradle.JRubyExec
-
 subprojects {
     apply plugin: "java"
-    apply plugin: "com.github.jruby-gradle.base"
 
     sourceCompatibility = 1.8
 
     dependencies {
-        jrubyExec "rubygems:ffi:1.9.18"
-        jrubyExec "rubygems:ffi-clang:0.5.0"
-
         compile "com.mobidevelop.robovm:robovm-rt:${versions.robovm}"
         compile "com.mobidevelop.robovm:robovm-cocoatouch:${versions.robovm}"
     }
 
-    task generatePod(type: JRubyExec) { task ->
-        String robovmRepoUrl = "https://github.com/MobiVM/robovm.git"
-        File robovmFolder = new File(rootProject.buildDir, "robovm")
-        cloneOrPull(robovmRepoUrl, robovmFolder)
-
-        String broRepoUrl = "https://github.com/MobiVM/robovm-bro-gen.git"
-        File broFolder = new File(rootProject.buildDir, "robovm-bro-gen")
-        cloneOrPull(broRepoUrl, broFolder)
-
-        script "${broFolder.absolutePath}/bro-gen.rb"
-        scriptArgs "src/main/java/", "src/main/bro-gen/${task.project.name}.yaml"
+    task generatePod(type: Exec) { task ->
+        String bro = "${task.project.rootProject.rootDir}/tools/robovm-bro-gen/bro-gen.rb"
+        commandLine "$bro", "src/main/java/", "src/main/bro-gen/${task.project.name}.yaml"
     }
 
     compileJava.dependsOn(generatePod)
@@ -52,25 +36,4 @@ subprojects {
         mavenCentral()
         maven { url "http://oss.sonatype.org/content/repositories/snapshots/" }
     }
-}
-
-def cloneOrPull(String broRepoUrl, File broFolder){
-    if (broFolder.exists()){
-        try {
-            Git git = Git.open(broFolder)
-            git.pull().call()
-        }
-        catch (Exception e){
-            logger.warn("Corrupted repo found", e)
-            broFolder.delete()
-            cloneRepo(broRepoUrl, broFolder)
-        }
-    } else cloneRepo(broRepoUrl, broFolder)
-}
-
-static def cloneRepo(String url, File destination){
-    Git.cloneRepository()
-            .setURI(url)
-            .setDirectory(destination)
-            .call()
 }
