@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8JI-lQ-KKS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web Image View Controller-->
+        <scene sceneID="9kp-ui-snh">
+            <objects>
+                <viewController id="8JI-lQ-KKS" customClass="SDWebImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="79l-id-HnU"/>
+                        <viewControllerLayoutGuide type="bottom" id="yiM-hj-37O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rxZ-Gv-9be">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CMG-Qx-dGf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="G1c-o6-D9v">
+                                <rect key="frame" x="36" y="30" width="303" height="2"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRa-PS-fB9">
+                                <rect key="frame" x="25" y="617" width="69" height="30"/>
+                                <state key="normal" title="Download"/>
+                                <connections>
+                                    <action selector="downloadImage:" destination="8JI-lQ-KKS" eventType="touchUpInside" id="aF5-ab-rnO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSA-dv-vgn">
+                                <rect key="frame" x="275" y="617" width="82" height="30"/>
+                                <state key="normal" title="Clear cache"/>
+                                <connections>
+                                    <action selector="clearCache:" destination="8JI-lQ-KKS" eventType="touchUpInside" id="5aC-wY-8mh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SRa-PS-fB9" secondAttribute="trailingMargin" id="0eN-7K-dh0"/>
+                            <constraint firstItem="SRa-PS-fB9" firstAttribute="baseline" secondItem="TSA-dv-vgn" secondAttribute="baseline" id="A7V-1b-11Q"/>
+                            <constraint firstItem="CMG-Qx-dGf" firstAttribute="centerX" secondItem="G1c-o6-D9v" secondAttribute="centerX" id="Aco-Wn-Xmr"/>
+                            <constraint firstItem="G1c-o6-D9v" firstAttribute="leading" secondItem="rxZ-Gv-9be" secondAttribute="leadingMargin" constant="20" id="EMX-Jh-xzi"/>
+                            <constraint firstAttribute="trailing" secondItem="CMG-Qx-dGf" secondAttribute="trailing" id="V7a-50-X0X"/>
+                            <constraint firstItem="CMG-Qx-dGf" firstAttribute="top" secondItem="rxZ-Gv-9be" secondAttribute="top" id="W7J-zw-1ay"/>
+                            <constraint firstItem="TSA-dv-vgn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rxZ-Gv-9be" secondAttribute="leadingMargin" id="Z0J-L4-Zkw"/>
+                            <constraint firstItem="G1c-o6-D9v" firstAttribute="top" secondItem="79l-id-HnU" secondAttribute="bottom" constant="10" id="fWw-q6-AvD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TSA-dv-vgn" secondAttribute="trailing" constant="2" id="jEK-qN-6ml"/>
+                            <constraint firstAttribute="bottom" secondItem="SRa-PS-fB9" secondAttribute="bottom" constant="20" symbolic="YES" id="js0-4o-5KM"/>
+                            <constraint firstItem="SRa-PS-fB9" firstAttribute="leading" secondItem="rxZ-Gv-9be" secondAttribute="leadingMargin" constant="9" id="ms8-ue-7d5"/>
+                            <constraint firstItem="CMG-Qx-dGf" firstAttribute="leading" secondItem="rxZ-Gv-9be" secondAttribute="leading" id="nSi-lo-mz1"/>
+                            <constraint firstItem="CMG-Qx-dGf" firstAttribute="bottom" secondItem="yiM-hj-37O" secondAttribute="top" id="rfb-56-zat"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="CMG-Qx-dGf" id="zAf-4E-5K8"/>
+                        <outlet property="progressView" destination="G1c-o6-D9v" id="BIO-zr-HKB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IzT-MF-u5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66" y="-286"/>
+        </scene>
+    </scenes>
+</document>

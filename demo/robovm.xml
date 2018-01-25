@@ -1,0 +1,22 @@
+<config>
+    <executableName>${app.executable}</executableName>
+    <mainClass>${app.mainclass}</mainClass>
+    <os>ios</os>
+    <target>ios</target>
+    <iosInfoPList>Info.plist.xml</iosInfoPList>
+    <resources>
+        <resource>
+            <directory>resources</directory>
+        </resource>
+    </resources>
+    <frameworkPaths>
+        <path>../lottie/src/main/bro-gen</path>
+        <path>../sdwebimage/src/main/bro-gen</path>
+    </frameworkPaths>
+    <frameworks>
+        <framework>CoreGraphics</framework>
+        <framework>SDWebImage</framework>
+        <framework>Lottie</framework>
+    </frameworks>
+    <treeShaker>aggressive</treeShaker>
+</config>

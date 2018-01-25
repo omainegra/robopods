@@ -1,2 +1,2 @@
-include ':sdwebimage', ":lottie"
+include ':sdwebimage', ":lottie", ":demo"
 
