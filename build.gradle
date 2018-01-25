@@ -1,5 +1,6 @@
 buildscript {
     ext.versions = [
+        "kotlin" : "1.2.20",
         "robovm" : "2.3.4-SNAPSHOT",
     ]
 
@@ -10,12 +11,19 @@ buildscript {
     }
 
     dependencies {
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3"
         classpath "com.mobidevelop.robovm:robovm-gradle-plugin:${versions.robovm}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
     }
 }
 
-subprojects {
+def pods = ["sdwebimage","lottie"]
+
+configure(pods.collect { project(":$it") }) {
     apply plugin: "java"
+    apply plugin: 'maven'
+    apply plugin: "maven-publish"
+    apply plugin: "com.jfrog.bintray"
 
     sourceCompatibility = 1.8
 
@@ -28,8 +36,64 @@ subprojects {
         String bro = "${task.project.rootProject.rootDir}/tools/robovm-bro-gen/bro-gen.rb"
         commandLine "$bro", "src/main/java/", "src/main/bro-gen/${task.project.name}.yaml"
     }
-
     compileJava.dependsOn(generatePod)
+
+    task sourceJar(type: Jar) {
+        from sourceSets.main.allJava
+        classifier "sources"
+    }
+
+    // Create the pom configuration:
+    def pomConfig = {
+        licenses {
+            license {
+                name "The Apache Software License, Version 2.0"
+                url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                distribution "repo"
+            }
+        }
+        developers {
+            developer {
+                id "omainegra"
+                name "Omar Alejandro Mainegra Sarduy"
+                email "omainegra@gmail.com"
+            }
+        }
+
+        scm {
+            url "https://github.com/omainegra/robopods.git"
+        }
+    }
+    publishing {
+        publications {
+            MyPublication(MavenPublication) {
+                from components.java
+                artifact sourceJar
+                groupId 'com.omainegra.robopods'
+                artifactId project.name
+                version project.version
+                pom.withXml {
+                    def root = asNode()
+                    root.appendNode('description', 'Robovm Pods')
+                    root.appendNode('name', 'Robopods')
+                    root.appendNode('url', 'https://github.com/omainegra/robopods')
+                    root.children().last() + pomConfig
+                }
+            }
+        }
+    }
+
+    bintray {
+        user = System.getenv('BINTRAY_USER')
+        key = System.getenv('BINTRAY_KEY')
+        publications = ['MyPublication']
+        pkg {
+            repo = 'robopods'
+            name = project.name
+            licenses = ['Apache-2.0']
+            vcsUrl = 'https://github.com/omainegra/robopods.git'
+        }
+    }
 
     repositories {
         jcenter()

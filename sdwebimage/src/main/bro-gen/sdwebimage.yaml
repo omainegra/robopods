@@ -52,38 +52,27 @@ classes:
     SDImageCache:
         methods:
             '-initWithNamespace:diskCacheDirectory:':
-                trim_after_first_colon:
-                name: initWithNamespace$diskCacheDirectory$
+                trim_after_first_colon: true
             '-storeImage:forKey:completion:':
-                trim_after_first_colon:
-                name: storeImage$forKey$completion$
+                trim_after_first_colon: true
             '-storeImage:forKey:toDisk:completion:':
-                trim_after_first_colon:
-                name: storeImage$forKey$toDisk$completion$
+                trim_after_first_colon: true
             '-storeImage:imageData:forKey:toDisk:completion:':
-                trim_after_first_colon:
-                name: storeImage$imageData$forKey$toDisk$completion$
+                trim_after_first_colon: true
             '-storeImageDataToDisk:forKey:':
-                trim_after_first_colon:
-                name: storeImageDataToDisk$forKey$
+                trim_after_first_colon: true
             '-diskImageExistsWithKey:completion:':
-                trim_after_first_colon:
-                name: diskImageExistsWithKey$completion$
+                trim_after_first_colon: true
             '-queryCacheOperationForKey:done:':
-                trim_after_first_colon:
-                name: queryCacheOperationForKey$done$
+                trim_after_first_colon: true
             '-queryCacheOperationForKey:options:done:':
-                trim_after_first_colon:
-                name: queryCacheOperationForKey$options$done$
+                trim_after_first_colon: true
             '-removeImageForKey:withCompletion:':
-                trim_after_first_colon:
-                name: removeImageForKey$withCompletion$
+                trim_after_first_colon: true
             '-removeImageForKey:fromDisk:withCompletion:':
-                trim_after_first_colon:
-                name: removeImageForKey$fromDisk$withCompletion$
+                trim_after_first_colon: true
             '-cachePathForKey:inPath:':
-                trim_after_first_colon:
-                name: cachePathForKey$inPath$
+                trim_after_first_colon: rue
     SDImageCacheConfig: {}
     SDWebImageCoderHelper: {}
     SDWebImageCodersManager: {}
@@ -145,16 +134,13 @@ protocols:
     SDWebImagePrefetcherDelegate:
         methods:
             '-imagePrefetcher:didPrefetchURL:finishedCount:totalCount:':
-                trim_after_first_colon:
-                name: imagePrefetcher$didPrefetchURL$finishedCount$totalCount$
+                trim_after_first_colon: true
             '-imagePrefetcher:didFinishWithTotalCount:skippedCount:':
-                trim_after_first_colon:
-                name: imagePrefetcher$didFinishWithTotalCount$skippedCount$
+                trim_after_first_colon: true
     SDWebImageProgressiveCoder:
         methods:
             '-incrementallyDecodedImageWithData:finished:':
-                trim_after_first_colon:
-                name: incrementallyDecodedImageWithData$finished$
+                trim_after_first_colon: true
     FLAnimatedImageViewDebugDelegate: {}
 
 functions:
@@ -176,7 +162,17 @@ constants:
         name: 'Constant__#{g[0]}'
 
 categories:
-    "WebCache@UIView": {}
+    "WebCache@UIView":
+        properties:
+#            'sd_imageLoopCount':
+#                name: getImageLoopCount
+#            'setSd_imageLoopCount:': { exclude: true }
+#                name: setImageLoopCount
+        methods:
+            '-sd_imageData':
+                name: imageData
+            '-sd_imageDataAsFormat:':
+                name: imageData
     "WebCache@UIImageView":
         methods:
             '-sd_setImageWithURL:':
@@ -193,6 +189,14 @@ categories:
                 name: setImage
             '-sd_setImageWithURL:placeholderImage:options:progress:completed:':
                 name: setImage
+            '-sd_setHighlightedImageWithURL:':
+                name: setHighlightedImage
+            '-sd_setImageWithPreviousCachedImageWithURL:placeholderImage:options:progress:completed:':
+                name: setImageWithPreviousCachedImage
+            '-sd_setAnimationImagesWithURLs:':
+                name: setAnimationImages
+            '-sd_cancelCurrentAnimationImagesLoad':
+                name: cancelCurrentAnimationImagesLoad
     "WebCache@UIButton": {}
     "WebCacheOperation@UIView": {}
     "MultiFormat@UIView": {}
