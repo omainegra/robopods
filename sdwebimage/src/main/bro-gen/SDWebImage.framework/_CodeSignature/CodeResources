@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/SDImageCache.h</key>
 		<data>
-		DGNn405yh//rQ8fX2BmqMRLkG8U=
+		uJYpXO0drAZFXzY2NT0b5wrnFlg=
 		</data>
 		<key>Headers/SDImageCacheConfig.h</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/SDWebImageDownloader.h</key>
 		<data>
-		d84PQSyew6ZGfCgLP5D679xbGKg=
+		DaDz2kH2rUESSxgcB4kQvgWD7/8=
 		</data>
 		<key>Headers/SDWebImageDownloaderOperation.h</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Headers/SDWebImageManager.h</key>
 		<data>
-		go6bufj6pBvONu8b9Uzs4MiImRA=
+		ceR4Ew3I0thDbgdZrPUwjtUGXZI=
 		</data>
 		<key>Headers/SDWebImageOperation.h</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Headers/UIView+WebCache.h</key>
 		<data>
-		Eil0/g5FzD4PGMzfVc/fIhYWyVs=
+		dd3nb3BZw7/0IwdHEdtfqRla+o8=
 		</data>
 		<key>Headers/UIView+WebCacheOperation.h</key>
 		<data>
@@ -194,11 +194,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DGNn405yh//rQ8fX2BmqMRLkG8U=
+			uJYpXO0drAZFXzY2NT0b5wrnFlg=
 			</data>
 			<key>hash2</key>
 			<data>
-			nWRjk8wizOe75lFmgpZR5j7KmDi3zh5w0Su2Je0kByI=
+			DdMA/6plD107x5gEKLofv0UCHcEkRyz/Gwij/EyaNtI=
 			</data>
 		</dict>
 		<key>Headers/SDImageCacheConfig.h</key>
@@ -271,11 +271,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			d84PQSyew6ZGfCgLP5D679xbGKg=
+			DaDz2kH2rUESSxgcB4kQvgWD7/8=
 			</data>
 			<key>hash2</key>
 			<data>
-			tms4ujvbX75nHAI7hNzf+iKPAz6wPIew6jGBQG8HcMI=
+			ARsY2pPLLf8+2wsLp4kPB5vvH4mO8CoUOgMN75kR39c=
 			</data>
 		</dict>
 		<key>Headers/SDWebImageDownloaderOperation.h</key>
@@ -326,11 +326,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			go6bufj6pBvONu8b9Uzs4MiImRA=
+			ceR4Ew3I0thDbgdZrPUwjtUGXZI=
 			</data>
 			<key>hash2</key>
 			<data>
-			eOZR3wv4hWPWGaOe5iFxNDJA+bD1qkT4QS5iF5ERWHM=
+			M0qxM+6qi+jtxFNZLdrFVVIrZEDsf1DQ4Tdb4mlWQj0=
 			</data>
 		</dict>
 		<key>Headers/SDWebImageOperation.h</key>
@@ -447,11 +447,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Eil0/g5FzD4PGMzfVc/fIhYWyVs=
+			dd3nb3BZw7/0IwdHEdtfqRla+o8=
 			</data>
 			<key>hash2</key>
 			<data>
-			EAXoMr6U6t5NGWJPYm7+vDGA/z0DN5drqlNtPk1qfeY=
+			bxjUX63sZDhMvdW+J0aH0QqYX87IxwTkOlfJ7K1k8gw=
 			</data>
 		</dict>
 		<key>Headers/UIView+WebCacheOperation.h</key>

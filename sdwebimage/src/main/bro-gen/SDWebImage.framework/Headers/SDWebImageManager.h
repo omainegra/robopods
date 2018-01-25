@@ -25,7 +25,7 @@ typedef NS_OPTIONS(NSUInteger, SDWebImageOptions) {
     SDWebImageLowPriority = 1 << 1,
 
     /**
-     * This flag disables on-disk caching, including cache query and cache storing
+     * This flag disables on-disk caching
      */
     SDWebImageCacheMemoryOnly = 1 << 2,
 
@@ -94,19 +94,7 @@ typedef NS_OPTIONS(NSUInteger, SDWebImageOptions) {
      * images to a size compatible with the constrained memory of devices.
      * If `SDWebImageProgressiveDownload` flag is set the scale down is deactivated.
      */
-    SDWebImageScaleDownLargeImages = 1 << 12,
-    
-    /**
-     * By default, we do not query disk data when the image is cached in memory. This mask can force to query disk data at the same time.
-     * This options is recommend to be used with `SDWebImageQueryDiskSync` to ensure the image is loaded in the same runloop.
-     */
-    SDWebImageQueryDataWhenInMemory = 1 << 13,
-    
-    /**
-     * By default, we query the memory cache synchronously, disk cache asynchronously. This mask can force to query disk cache synchronously to ensure that image is loaded in the same runloop.
-     * This can avoid flashing during cell reuse if you disable memory cache or in some other cases.
-     */
-    SDWebImageQueryDiskSync = 1 << 14
+    SDWebImageScaleDownLargeImages = 1 << 12
 };
 
 typedef void(^SDExternalCompletionBlock)(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL);
