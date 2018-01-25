@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Web Image View Controller-->
+        <!--SDWebImage-->
         <scene sceneID="9kp-ui-snh">
             <objects>
                 <viewController id="8JI-lQ-KKS" customClass="SDWebImageViewController" sceneMemberID="viewController">
@@ -59,6 +59,7 @@
                             <constraint firstItem="CMG-Qx-dGf" firstAttribute="bottom" secondItem="yiM-hj-37O" secondAttribute="top" id="rfb-56-zat"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="SDWebImage" id="RqF-Rx-36e"/>
                     <connections>
                         <outlet property="imageView" destination="CMG-Qx-dGf" id="zAf-4E-5K8"/>
                         <outlet property="progressView" destination="G1c-o6-D9v" id="BIO-zr-HKB"/>
@@ -68,7 +69,7 @@
             </objects>
             <point key="canvasLocation" x="954" y="-141"/>
         </scene>
-        <!--Lottie View Controller-->
+        <!--Lottie-->
         <scene sceneID="UsZ-Yi-fAH">
             <objects>
                 <viewController id="ww3-ir-fyv" customClass="LottieViewController" sceneMemberID="viewController">
@@ -81,12 +82,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Lottie" id="FkX-9f-wHN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="303-rP-IEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="953" y="628"/>
         </scene>
-        <!--View Controller-->
+        <!--Robopods Demo-->
         <scene sceneID="3i6-Cd-wyc">
             <objects>
                 <viewController id="L8Z-0g-tU8" sceneMemberID="viewController">
@@ -120,7 +122,9 @@
                             <constraint firstItem="lqO-hz-yop" firstAttribute="centerX" secondItem="rbo-Q1-wUb" secondAttribute="centerX" id="whQ-DO-hnc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HGp-F3-umV"/>
+                    <navigationItem key="navigationItem" title="Robopods Demo" id="HGp-F3-umV">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="fx0-n5-Pm1"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8J-cX-q0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
