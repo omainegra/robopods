@@ -1,5 +1,5 @@
 group 'com.omainegra'
-version '0.1.0'
+version '2.5.0-0.1.0'
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
