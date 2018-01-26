@@ -24,24 +24,24 @@ Complementary Robovm [RoboPods](https://github.com/mobivm/robovm-robopods)
 
 #### Build frameworks
 
-**SDWebImage**
+*SDWebImage*
 ```
 $ git clone https://github.com/rs/SDWebImage.git
 $ cd SDWebImage
 $ git checkout tags/4.2.3
 $ git submodule update --init --recursive
 $
-$ xcodebuild build -workspace SDWebImage.xcworkspace -scheme "SDWebImage iOS" -sdk iphoneos             // For device
+$ xcodebuild build -workspace SDWebImage.xcworkspace -scheme "SDWebImage iOS" -sdk iphoneos        // For device
 $ xcodebuild build -workspace SDWebImage.xcworkspace -scheme "SDWebImage iOS" -sdk iphonesimulator // For simulator
 ```
 
-**Lottie**
+*Lottie*
 ```
 $ git clone https://github.com/airbnb/lottie-ios.git
 $ cd lottie-ios
 $ git checkout tags/2.5.0
 $
-$ xcodebuild build -project Lottie.xcodeproj -sdk iphoneos              // For device
+$ xcodebuild build -project Lottie.xcodeproj -sdk iphoneos        // For device
 $ xcodebuild build -project Lottie.xcodeproj -sdk iphonesimulator // For simulator
 ```
 
@@ -49,12 +49,10 @@ Copy **SDWebImage.framework** and **Lottie.framework** to `<your project>/framew
 
 #### Update `robovm.xml` configuration file
 ```
+<frameworkPaths>
+    <path>frameworks</path>
+</frameworkPaths>
 <frameworks>
-    ...
-    <frameworkPaths>
-        <path>frameworks</path>
-    </frameworkPaths>
-
     <framework>SDWebImage</framework>
     <framework>Lottie</framework>
     ...
