@@ -1,8 +1,8 @@
 <config>
     <frameworks>
+        <framework>SDWebImage</framework>
         <framework>Foundation</framework>
         <framework>UIKit</framework>
         <framework>CoreGraphics</framework>
-        <framework>Dispatch</framework>
     </frameworks>
 </config>

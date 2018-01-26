@@ -1,5 +1,6 @@
 <config>
     <frameworks>
+        <framework>Lottie</framework>
         <framework>Foundation</framework>
         <framework>UIKit</framework>
         <framework>CoreGraphics</framework>
