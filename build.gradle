@@ -1,6 +1,6 @@
 buildscript {
     ext.versions = [
-        "kotlin" : "1.2.20",
+        "kotlin" : "1.2.21",
         "robovm" : "2.3.4-SNAPSHOT",
     ]
 
@@ -26,6 +26,7 @@ configure(pods.collect { project(":$it") }) {
     apply plugin: "com.jfrog.bintray"
 
     sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 
     dependencies {
         compile "com.mobidevelop.robovm:robovm-rt:${versions.robovm}"
