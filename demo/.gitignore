@@ -9,3 +9,5 @@
 .idea
 /captures
 /projectFilesBackup/
+/frameworks/Lottie.framework/
+/frameworks/SDWebImage.framework/
